@@ -15,4 +15,7 @@ router.get('/', (req,res) => {
 // get single user
 
 
+
 // post a new user
+
+module.exports = router;
