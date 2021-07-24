@@ -3,8 +3,7 @@ const { User } = require('../../models/User');
 
 // get all users
 router.get('/', (req,res) => {
-    Users.findAll({
-    })
+    User.find()
     .then(dbUserData => res.json(dbUserData))
       .catch(err => {
         console.log(err);
@@ -17,5 +16,7 @@ router.get('/', (req,res) => {
 
 
 // post a new user
+
+
 
 module.exports = router;
