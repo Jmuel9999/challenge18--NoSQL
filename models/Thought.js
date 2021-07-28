@@ -31,7 +31,7 @@ const ThoughtSchema = new Schema(
 );
 
 // get total count of friends on retrieval
-UserSchema.virtual('reactionCount').get(function() {
+ThoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.reduce(
       (total, reactions) => total + reactions.length + 1,
       0
