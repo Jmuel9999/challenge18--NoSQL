@@ -36,7 +36,7 @@ const thoughtController = {
             })
         
         },
-    createThought({body}, res) {
+    newThought({body}, res) {
         Thought.create(body)
         .then(thoughtData => res.json(thoughtData))
         .catch(err => {
