@@ -9,6 +9,13 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(require('./routes'));
 
+const mongoDB = 'mongodb://localhost/social-network-db';
+mongoose.connect(mongoDB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+});
+
 mongoose.set('debug', true);
 
 app.listen(PORT, () => console.log(`Connected on localhost:${PORT}`));
