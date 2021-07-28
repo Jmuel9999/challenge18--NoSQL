@@ -1,22 +1,21 @@
 const router = require('express').Router();
 const { User } = require('../../models/User');
 
-// get all users
-router.get('/', (req,res) => {
-    User.find()
-    .then(dbUserData => res.json(dbUserData))
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  })
+const {
+  getUsers,
+  getUser,
+  newUser,
+  deleteUser
+} = require('../../controllers/user-controller');
 
-// get single user
+router
+  .route('/')
+  .get(getUsers)
+  .post(newUser);
 
-
-
-// post a new user
-
-
+router
+  .route('/:id')
+  .get(getUser)
+  .delete(deleteUser);  
 
 module.exports = router;
