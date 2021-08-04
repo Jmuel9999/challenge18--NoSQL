@@ -1,11 +1,13 @@
-const { User, Thought } = require('../models');
+const { User } = require('../models');
 
 const userController = {
     // get all users
     getUsers(req, res) {
+        console.log("route")
         User.find({})
             .then(userData => res.json(userData))
             .catch(err => {
+                console.error(err)
                 res.status(400).json(err);
             })
         },
